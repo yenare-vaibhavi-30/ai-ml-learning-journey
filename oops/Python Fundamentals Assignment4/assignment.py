@@ -124,3 +124,170 @@
 
 
      
+
+
+# Function Overriding
+# Create a class Shape with a method area().
+# Create subclasses circle , rectangle , and triangle that override the area()
+# method.
+# Q4 Shape
+# Circle Rectangle Triangle override
+
+
+# import math
+
+# class Shape:
+#     def area(self):
+#         print("Area of shape")
+
+
+# class Circle(Shape):
+#      def __init__(self, radius):
+#         self.radius = radius
+
+#      def area(self):
+#         return math.pi * self.radius * self.radius
+
+# class Rectangle(Shape):
+#      def __init__(self, length, width):
+#         self.length = length
+#         self.width = width
+
+#      def area(self):
+#          return self.length * self.width
+
+
+# class Triangle(Shape):
+#      def __init__(self, base, height):
+#          self.base = base
+#          self.height = height
+
+#      def area(self):
+#          return 0.5 * self.base * self.height 
+
+# c = Circle(5)
+# r = Rectangle(5, 10)
+# t = Triangle(4,6)
+
+# print("Circle Area : ", round(c.area(), 2))
+# print("Rectangle Area : ",r.area())
+# print("Triangle Area : ", t.area())
+
+
+
+# Inheritance Concept:
+# Create a class Vehicle with attributes like brand and model.
+# Create two subclasses car and bike that add extra attributes - seats (in Car) &
+# engine_cc (in Bike).
+# Q5 base Vehicle
+
+# class Vehicle:
+#      def __init__(self, brand, model):
+#           self.brand = brand
+#           self.model = model
+
+#      def display(self):
+#           print("Brand : ", self.brand)
+#           print("Model : ", self.model)
+
+
+# class Car(Vehicle):
+#      def __init__(self, seats, brand, model):
+#           super().__init__(brand, model)
+#           self.seats = seats
+
+#      def display(self):
+#           super().display()
+#           print("Seats : ", self.seats)
+
+# class Bike(Vehicle):
+#      def __init__(self, brand, model, engine_cc):
+#           super().__init__(brand, model)
+#           self.engine_cc = engine_cc
+
+#      def display(self):
+#           super().display()
+#           print("Engine_cc : ", self.engine_cc)
+
+# car1 = Car("Tata", "Nexon", 4)
+# bike1 = Bike("Royal Enfield", "Classic 350", 350)
+
+# print("Car Details: ")
+# car1.display()
+
+# print("\nBike Details: ")
+# bike1.display()
+
+
+
+
+
+
+# Concept:Abstraction
+# Create an abstract class Employee with an abstract method
+# calculate_salary().
+# Create subclasses Intern FullTimeEmployee and ContractEmployee that
+# implement the method differently.
+
+
+# from abc import ABC, abstractmethod
+
+# class Employee:
+#      @abstractmethod
+#      def calculate_salary(self):
+#           pass
+
+# class Intern(Employee):
+#      def calculate_salary(self):
+#           print("Intern Salary: 10000")
+
+# class FullTime_Emp(Employee):
+#      def calculate_salary(self):
+#           print("Full Time Salary: 40000")
+
+# class ContractEmployee(Employee):
+#      def calculate_salary(self):
+#           print("Contract Salary: 20000")
+
+# e1 = Intern()
+# e2 = FullTime_Emp()
+# e3 = ContractEmployee()
+
+# e1.calculate_salary()
+# e2.calculate_salary()
+# e3.calculate_salary()
+
+
+
+
+# Concept: Constructor Overloading (with Default Parameters
+# . Create a class that allows the constructor to work with:Q7 Person
+# • name only
+# • name + age
+# • name + age + address
+# As direct constructor overloading (multiple constructors) are not allowed but
+# we have to use default parameters to simulate constructor overloading.
+
+class Person:
+     def __init__(self,name, age = None, address = None):
+          self.name = name
+          self.age = age
+          self.address = address
+
+     def display(self):
+          print("Name : ", self.name)
+          print("Age : ", self.age)
+          print("Address : ", self.address)
+
+p1 = Person("Vaibhavi")
+p2 = Person("Vaibhavi", 22)
+p3 = Person("Vaibhavi", 22, "Ahilyanager")
+
+print("Person 1:")
+p1.display()
+
+print("\nPerson 2:")
+p2.display()
+
+print("\nPerson 3:")
+p3.display()

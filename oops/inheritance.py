@@ -21,21 +21,21 @@
 # # print(t1.subject, t1.start_time, t1.end_time)
 
 
-# class Employee:
-#      start_time = "10am"
-#      end_time = "6pm"
+class Employee:
+     start_time = "10am"
+     end_time = "6pm"
 
-# class AdminStaff(Employee):
-#      def __init__(self, role):
-#           self.role = role
+class AdminStaff(Employee):
+     def __init__(self, role):
+          self.role = role
 
-# class Accountant(AdminStaff):
-#      def __init__(self, salary, role):
-#           super().__init__(role)
-#           self.salary = salary
+class Accountant(AdminStaff):
+     def __init__(self, salary, role):
+          super().__init__(role)
+          self.salary = salary
 
-# acc1 = Accountant("CA", 40_000)
-# print(acc1.role, acc1.salary, acc1.start_time, acc1.end_time)
+acc1 = Accountant("CA", 40_000)
+print(acc1.role, acc1.salary, acc1.start_time, acc1.end_time)
 
 
 # class Teacher:
