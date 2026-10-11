@@ -62,6 +62,16 @@
 
 
 
+data = True
+line = 1
+world = "store"
 
+with open("File I\\O/sample.txt", "r") as f:
+     while data: 
+          data = f.readline()
 
-
+          if(world in data):
+               print(f"word found at line {line}")
+               break
+          print(data)
+          line += 1
