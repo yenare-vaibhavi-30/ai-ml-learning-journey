@@ -124,17 +124,27 @@
 
 # Count Digits
 
-num = int(input("Enter a number : "))
-count = 0
+# num = int(input("Enter a number : "))
+# count = 0
 
-while num > 0:
-     num = num // 10
-     count = count + 1
-     print(count)
+# while num > 0:
+#      num = num // 10
+#      count = count + 1
+#      print(count)
      
 
 # 7. Armstrong Number — उदा. 153 → Armstrong
 
 num = int(input("Enter a number : "))
-digit = 0
+total = 0
 temp = num
+power = len(str(num))
+
+while temp > 0:
+     digit = temp % 10 
+     total = total + digit ** power
+     temp = temp // 10
+     if total == num:
+          print("is Amstrong number")
+     else:
+          print("not a Amstrong number")
